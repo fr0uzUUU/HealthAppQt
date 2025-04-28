@@ -27,17 +27,19 @@ HealthAppQt/
 ├── data/
 │   └── users.json             # User login data
 </pre>
->Installation and Running
->>1.Create and activate venv<br>
-> <code>
-> python -m venv .venv<br>
-.venv\Scripts\activate
-> </code><br>
->>2.Install PySide6<br>
-> <code>
-> pip install PySide6
-> </code><br>
-> 2.Running Application<br>
-> <code>
-> python main.py
-> </code><br>
+
+Installation and Running
+
+1.Create and activate venv<br>
+<code>python -m venv .venv</code>
+<br>
+<code>.venv\Scripts\activate</code>
+<br>
+
+2.Install PySide6<br>
+<code>pip install PySide6</code>
+<br>
+
+3.Running Application<br>
+<code>python main.py</code>
+<br>
