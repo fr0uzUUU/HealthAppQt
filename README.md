@@ -28,7 +28,7 @@ HealthAppQt/
 │   └── users.json             # User login data
 </pre>
 
-Installation and Running
+### Installation and Running
 
 1.Create and activate venv<br>
 <code>python -m venv .venv</code>
