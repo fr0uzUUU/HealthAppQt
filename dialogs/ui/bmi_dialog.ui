@@ -6,22 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>200</height>
+    <width>255</width>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Kalkulator BMI</string>
   </property>
-  <layout class="QVBoxLayout">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLineEdit" name="weightInput">
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
      <property name="placeholderText">
       <string>Waga (kg)</string>
      </property>
@@ -29,57 +23,43 @@
    </item>
    <item>
     <widget class="QLineEdit" name="heightInput">
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
      <property name="placeholderText">
-      <string>Wzrost (m)</string>
+      <string>Wzrost (cm)</string>
      </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="ageInput">
+     <property name="placeholderText">
+      <string>Wiek (lata)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="genderCombo">
+     <item>
+      <property name="text">
+       <string>Mężczyzna</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Kobieta</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="calculateButton">
-     <property name="font">
-      <font>
-       <family>Yu Gothic UI</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
      <property name="text">
-      <string>Oblicz</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QProgressBar" name="progressBar">
-     <property name="maximum">
-      <number>99</number>
-     </property>
-     <property name="value">
-      <number>0</number>
+      <string>Oblicz BMI</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="resultLabel">
-     <property name="font">
-      <font>
-       <family>Yu Gothic UI</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
      <property name="text">
-      <string>Wynik BMI...</string>
+      <string>Wynik BMI pojawi się tutaj</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

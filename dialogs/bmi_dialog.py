@@ -1,6 +1,4 @@
-from time import sleep
-
-from PySide6.QtWidgets import QWidget, QLineEdit, QLabel, QPushButton, QProgressBar
+from PySide6.QtWidgets import QWidget, QMessageBox, QLineEdit, QPushButton, QComboBox, QLabel
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 
@@ -15,26 +13,39 @@ class BMIDialog(QWidget):
 
         self.weight_input = self.window.findChild(QLineEdit, "weightInput")
         self.height_input = self.window.findChild(QLineEdit, "heightInput")
+        self.age_input = self.window.findChild(QLineEdit, "ageInput")
+        self.gender_combo = self.window.findChild(QComboBox, "genderCombo")
         self.result_label = self.window.findChild(QLabel, "resultLabel")
-        self.progress_bar = self.window.findChild(QProgressBar, "progressBar")
-        self.calc_button = self.window.findChild(QPushButton, "calculateButton")
+        self.calculate_button = self.window.findChild(QPushButton, "calculateButton")
 
-        self.calc_button.clicked.connect(self.calculate_bmi)
-        self.progress_bar.setValue(0)
+        self.calculate_button.clicked.connect(self.calculate_bmi)
         self.window.show()
 
     def calculate_bmi(self):
         try:
-
-
             weight = float(self.weight_input.text())
-            height = float(self.height_input.text())
-            bmi = weight / (height ** 2)
-            for x in range(100):
-                self.progress_bar.setValue(x)
-                x+=5
-                sleep(0.01)
+            height_cm = float(self.height_input.text())
+            age = int(self.age_input.text())
+            gender = self.gender_combo.currentText()
 
-            self.result_label.setText(f"Twoje BMI: {bmi:.2f}")
+            if height_cm <= 0 or weight <= 0 or age <= 0:
+                raise ValueError("Invalid input values")
+
+            height_m = height_cm / 100
+            bmi = weight / (height_m ** 2)
+
+            category = self.bmi_category(bmi, age, gender)
+            self.result_label.setText(f"BMI: {bmi:.2f} ({category})")
+
         except ValueError:
-            self.result_label.setText("Nieprawidłowe dane")
+            QMessageBox.warning(self, "Błąd", "Wprowadź poprawne dane liczbowe.")
+
+    def bmi_category(self, bmi, age, gender):
+        if bmi < 18.5:
+            return "Niedowaga"
+        elif 18.5 <= bmi < 25:
+            return "Waga prawidłowa"
+        elif 25 <= bmi < 30:
+            return "Nadwaga"
+        else:
+            return "Otyłość"
