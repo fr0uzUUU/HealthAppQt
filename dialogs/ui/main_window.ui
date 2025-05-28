@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>300</height>
+    <height>374</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,6 +104,19 @@
      </property>
      <property name="text">
       <string>Motywacja</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="markAsTakenButton">
+     <property name="font">
+      <font>
+       <family>Yu Gothic UI</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Oznacz  zażycie leków</string>
      </property>
     </widget>
    </item>

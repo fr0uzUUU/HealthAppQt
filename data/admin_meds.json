@@ -1,10 +1,30 @@
 [
     {
         "lek": "Ketonal",
-        "dawka": "1 x kiedy bolą plecy ;)"
+        "dawka": "1 x kiedy bolą plecy ;)",
+        "status": "zażyty"
     },
     {
         "lek": "Apap",
-        "dawka": "2 x dziennie"
+        "dawka": "2 x dziennie",
+        "status": "zażyty"
+    },
+    {
+        "lek": "isla",
+        "dawka": "2 x dziennie",
+        "godzina": "11:50",
+        "status": "zażyty"
+    },
+    {
+        "lek": "testowy",
+        "dawka": "1 x dziennie",
+        "godzina": "12:06",
+        "status": "niezażyty"
+    },
+    {
+        "lek": "test2",
+        "dawka": "1 x dziennie",
+        "godzina": "12:13",
+        "status": "zażyty"
     }
 ]
